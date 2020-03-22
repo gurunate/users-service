@@ -10,6 +10,11 @@ module.exports = server => {
 
     server.get('/users/:id', async (req, res, next) => {
         const user = await User.findOne({ where: { id: req.params.id } });
+
+        if (!user) {
+            res.status(404);
+        }
+
         res.send(user || {});
         next();
     });
@@ -33,8 +38,14 @@ module.exports = server => {
 
     server.del('/users/:id', async (req, res, next) => {
         const user = await User.findOne({ where: { id: req.params.id } });
-        user.destroy();
-        res.status(204);
+
+        if (user) {
+            await user.destroy();
+            res.status(204);
+        } else {
+            res.status(404);
+        }
+
         res.send();
         next();
     });
