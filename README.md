@@ -1,6 +1,6 @@
 # users-service
 
-Simple RESTful users service built with restify and Sequelize.
+Simple RESTful users service built with restify, Sequelize and MySQL.
 
 ## Setup
 
@@ -10,11 +10,24 @@ Simple RESTful users service built with restify and Sequelize.
 $ npm i
 ```
 
+### Configuration
+
+See [.env-sample](.env-sample).
+
 ### Run
 
 ```bash
 $ npm run dev
 ```
+
+-   http://localhost:57544
+
+## Usage
+
+| Method | Path                            | Description             |
+| ------ | ------------------------------- | ----------------------- |
+| `GET`  | [/users](localhost:57544/users) | Returns a list of users |
+| `POST` | [/users](localhost:57544/users) | Creates a new user      |
 
 ## References
 
