@@ -24,10 +24,13 @@ $ npm run dev
 
 ## Usage
 
-| Method | Path                                   | Description             |
-| ------ | -------------------------------------- | ----------------------- |
-| `GET`  | [/users](http://localhost:57544/users) | Returns a list of users |
-| `POST` | [/users](http://localhost:57544/users) | Creates a new user      |
+| Method   | Path         | Description                |
+| -------- | ------------ | -------------------------- |
+| `GET`    | `/users`     | Returns a list of users    |
+| `GET`    | `/users/:id` | Returns a an existing user |
+| `PUT`    | `/users`     | Creates a new user         |
+| `POST`   | `/users/:id` | Update an existing user    |
+| `DELETE` | `/users/:id` | Deletes an existing user   |
 
 ## References
 
