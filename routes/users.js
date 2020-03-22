@@ -4,19 +4,19 @@ const { User } = require('../models');
 module.exports = server => {
     server.get('/users', async (req, res, next) => {
         const users = await User.findAll();
-        res.send(users);
+        res.send(users || []);
         next();
     });
 
     server.get('/users/:id', async (req, res, next) => {
         const user = await User.findOne({ where: { id: req.params.id } });
-        res.send(user);
+        res.send(user || {});
         next();
     });
 
     server.put('/users', async (req, res, next) => {
         const user = await User.create(req.body);
-        res.send(user);
+        res.send(user || []);
         next();
     });
 
