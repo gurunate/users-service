@@ -1,21 +1,6 @@
 version: '3'
 
 services:
-    web:
-        build: .
-        ports:
-          - 57544:57544
-        depends_on:
-          - db
-        restart: on-failure
-        environment:
-            - PORT=57544
-            # - DB_HOST=localhost
-            - DB_PORT=3306
-            - DB_DIALECT=mysql
-            - DB_NAME=users-service
-            - DB_USERNAME=users-service
-            - DB_PASSWORD=blah
     db:
         image: mysql:5.7.29
         volumes:
@@ -24,9 +9,21 @@ services:
             - 3306:3306
         environment:
             - MYSQL_ROOT_PASSWORD=whee
-            - MYSQL_DATABASE=docker
+            - MYSQL_DATABASE=users_service
             - MYSQL_USER=users-service
             - MYSQL_PASSWORD=blah
-
-
-
+    web:
+        build: .
+        ports:
+          - 8080:8080
+        depends_on:
+          - db
+        restart: on-failure
+        environment:
+            - PORT=57544
+            - DB_HOST=db
+            - DB_PORT=3306
+            - DB_DIALECT=mysql
+            - DB_NAME=users_service
+            - DB_USERNAME=users-service
+            - DB_PASSWORD=blah
