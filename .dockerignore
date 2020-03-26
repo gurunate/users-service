@@ -1,4 +1,7 @@
+.env 
+.env-sample
+.gitignore
+.mysql-data/
 node_modules/
 npm-debug.log
-.env .env-sample
-.mysql-data/
+README.md

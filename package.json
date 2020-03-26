@@ -4,6 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "compose-down": "docker-compose down --remove-orphans",
+    "compose-up": "docker-compose up -d --remove-orphans",
     "dev": "nodemon",
     "migrate": "sequelize-cli db:migrate"
   },
