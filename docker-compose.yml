@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-    users-service:
+    web:
         build: .
         ports:
           - 57544:57544
@@ -10,13 +10,13 @@ services:
         restart: on-failure
         environment:
             - PORT=57544
-            - DB_HOST=localhost
+            # - DB_HOST=localhost
             - DB_PORT=3306
             - DB_DIALECT=mysql
             - DB_NAME=users-service
             - DB_USERNAME=users-service
             - DB_PASSWORD=blah
-    mysql:
+    db:
         image: mysql:5.7.29
         volumes:
             - ./.mysql-data/db:/var/lib/mysql
