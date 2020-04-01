@@ -1,6 +1,6 @@
 # users-service
 
-Simple RESTful users service built with [restify](http://restify.com/), [Sequelize](https://sequelize.org/), [MySQL](https://hub.docker.com/layers/mysql/library/mysql/5.7.29/images/sha256-74cb47745213f69833348f814f378a6e446b53e518e650fab44a71c523f1004b?context=explore) and Docker.
+Simple RESTful users service built with [restify](http://restify.com/), [Sequelize](https://sequelize.org/), [MySQL](https://hub.docker.com/layers/mysql/library/mysql/5.7.29/images/sha256-74cb47745213f69833348f814f378a6e446b53e518e650fab44a71c523f1004b?context=explore) and [Docker](https://docs.docker.com/).
 
 ## Setup
 
@@ -20,7 +20,41 @@ For a quick start, copy the `sample.env` to `.env`.
 $ cp sample.env .env
 ```
 
-### Run
+### Database
+
+`user-service` requires a running MySQL.
+
+#### Build DB
+
+```bash
+$ npm run db:build
+```
+
+#### Run DB
+
+```bash
+$ npm run db:run
+```
+
+#### View DB Logs
+
+```bash
+$ npm run db:logs
+```
+
+#### Stop DB
+
+```bash
+$ npm run db:stop
+```
+
+### Start
+
+```bash
+$ npm start
+```
+
+### Development
 
 ```bash
 $ npm run dev
@@ -49,3 +83,4 @@ $ npm run dev
 
 -   [restify](http://restify.com/)
 -   [Sequelize ORM](https://sequelize.org/)
+-   [Docker](https://docs.docker.com/)
