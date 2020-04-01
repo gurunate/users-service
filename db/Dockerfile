@@ -5,7 +5,7 @@ ENV MYSQL_DATABASE docker
 ENV MYSQL_USER users-service  
 ENV MYSQL_PASSWORD blah
 
-VOLUME ./.mysql-data/db:
+VOLUME ./.mysql-data/db
 
 EXPOSE 3306
 

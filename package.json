@@ -4,9 +4,13 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "compose-down": "docker-compose down --remove-orphans",
-    "compose-up": "docker-compose up -d --remove-orphans",
-    "dev": "nodemon",
+    "compose:down": "docker-compose down --remove-orphans",
+    "compose:up": "docker-compose up -d --remove-orphans",
+    "db:build": "docker build db/. --tag users-service_mysql",
+    "db:logs": "docker logs users-service_db",
+    "db:run": "docker run -p 3306:3306 -d --name users-service_db --rm users-service_mysql",
+    "db:stop": "docker stop users-service_db",
+    "dev": "nodemon server.js",
     "migrate": "sequelize-cli db:migrate"
   },
   "keywords": [],
