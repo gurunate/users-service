@@ -6,7 +6,6 @@ ENV MYSQL_USER users-service
 ENV MYSQL_PASSWORD blah
 
 VOLUME ./.mysql-data/db
-# VOLUME  ./.mysql-data/db:/var/lib/mysql
 
 EXPOSE 3306
 
