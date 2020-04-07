@@ -1,7 +1,7 @@
+const { Sequelize } = require('sequelize');
 const { User } = require('../models');
 
-
-module.exports = server => {
+module.exports = (server) => {
     server.get('/users', async (req, res, next) => {
         const users = await User.findAll();
         res.send(users || []);
@@ -33,6 +33,35 @@ module.exports = server => {
         await user.save();
 
         res.send(user);
+        next();
+    });
+
+    server.post('/users/search', async (req, res, next) => {
+        const { like, or } = Sequelize.Op;
+
+        const users = await User.findAll({
+            where: {
+                [or]: [
+                    {
+                        firstName: {
+                            [like]: `%${req.body.term}%`
+                        }
+                    },
+                    {
+                        lastName: {
+                            [like]: `%${req.body.term}%`
+                        }
+                    },
+                    {
+                        email: {
+                            [like]: `%${req.body.term}%`
+                        }
+                    }
+                ]
+            }
+        });
+
+        res.send(users || []);
         next();
     });
 
