@@ -76,6 +76,7 @@ $ npm run dev
 
 ### Related Resouces
 
+-   [data-graph-demo](https://github.com/gurunate/data-graph-demo)
 -   [sample-web-app](https://github.com/gurunate/sample-web-app)
 -   [sample-data-graph](https://github.com/gurunate/sample-data-graph)
 
