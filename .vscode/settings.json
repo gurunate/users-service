@@ -1,10 +1,10 @@
 {
     "sqltools.connections": [
         {
-            "database": "users",
+            "database": "docker",
             "dialect": "MySQL",
-            "isActive": true,
-            "isConnected": true,
+            "isActive": false,
+            "isConnected": false,
             "name": "mysql",
             "password": "whee",
             "port": 3306,
